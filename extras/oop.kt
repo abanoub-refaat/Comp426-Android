@@ -54,6 +54,11 @@ class Person(var firstName: String, var lastName: String) {
             lastName = components[1]
             field = value
         }
+    var age: Int = 0
+        get() = age
+        set(value){
+            field = value
+        }
 }
 
 // adding an extension function to the existing Int class
@@ -61,7 +66,13 @@ fun Int.isOdd(): Boolean {
     return this % 2 == 1
 }
 
+fun Int.isEven(): Boolean {
+    return this % 2 == 0
+}
+
 data class Player (val name: String, val score: Int)
+
+class Labtop (val model: String, val price:Double)
 
 fun main(args: Array<String>){
     val myHouse = House("white")
@@ -99,4 +110,10 @@ fun main(args: Array<String>){
 
     val firstPlayer = Player("Abanoub", 10)
     println(firstPlayer)
+
+    println("\nBreak\n")
+
+    val myLabtop = Labtop("Acer", 10.0)
+    println(myLabtop.model)
+
 }
